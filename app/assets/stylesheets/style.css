@@ -39,7 +39,7 @@ a {
 .header {
   background-color: skyblue;
   margin-bottom: 0px;
-  padding: 20px 0;
+  padding: 10px 0;
 
 }
 .inner {
@@ -59,6 +59,7 @@ a {
 .nav_title {
   font-size: 45px;
   color: white;
+  /* padding-left: 0px; */
 }
 
 .nav__right {
@@ -133,6 +134,15 @@ a {
 }
 
 /* メイン */
+
+/* Side */
+.side-bar {
+  padding: 20px 80px 40px;
+}
+.new_animal {
+  padding-right: 5pxx;
+  color: white;
+}
 
 .greeting{
   margin-bottom: 20px;
