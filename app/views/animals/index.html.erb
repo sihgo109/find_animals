@@ -1,12 +1,23 @@
 <main class="main">
+<div class="wrapper">
+  <div class="side-bar">
+
+  </div>
+  <div class="body">
   <div class="inner">
       <%# ログインしているときは以下を表示する %>
       <% if user_signed_in? %>
        <div class="greeting">
-        <%= link_to "#{current_user.nickname} さんとしてログイン中です", root_path(current_user), class: :greeting__link%>
+        <%= link_to "#{current_user.nickname} さんとしてログイン中", root_path(current_user), class: :greeting__link%>
       </div>
       <% end %>
         <%# // ログインしているときは上記を表示する %>
-    
+    <div class="card__wrapper">
+        <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%# @animals.each do |animal| %>
+       <%# render partial: "animal", locals: { animal: animal } %>
+      <%# end %>
+    <%# </div> %>
+  </div>
   </div>
 </main>

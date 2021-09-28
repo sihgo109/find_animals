@@ -1,0 +1,12 @@
+<div class="card">
+  <%= link_to image_tag(animal.image, class: :card__img ), animal_path(animal.id)%>
+  <div class="card__body">
+    <%= link_to animal.title, animal_path(animal.id), class: :card__title%>
+    <%# link_to animal.title, animal_path(animal.id), method: :get, class: :card__title %>
+    <p class="card__summary">
+      <%= animal.catch_copy %>
+    </p>
+    <%= link_to "#{animal.user.username}", user_path(animal.user_id), class: :card__user %>
+    <%# link_to animal.user.username, user_path(animal.user_id), class: :card__user %>
+  </div>
+</div>
