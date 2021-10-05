@@ -1,0 +1,23 @@
+<main class="main">
+  <div class="wrapper">
+      <%= render partial: "animals/side_bar" %>
+    <div class="inner">
+      <div class="animal__wrapper">
+        <%= link_to '<<TOPへ戻る', root_path,  class: :top_btn %>
+        
+        <div class="container">
+        <h1 class="users-heading">ユーザ一覧</h1>
+          <% @users.each do |user| %>
+            <div class="users-index-item">
+              <div class="user-right">
+                <!-- 下記のコードでユーザーを表示させています。 -->
+                <%= link_to(user.nickname, "/users/#{user.id}") %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

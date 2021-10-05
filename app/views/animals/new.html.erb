@@ -1,9 +1,16 @@
+<main class="main">
+<div class="wrapper">
+    <%= render partial: "side_bar" %>
+    
+
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">新規プロトタイプ投稿</h2>
+      <h2 class="page-heading">新規投稿</h2>
         <%# 部分テンプレートでフォームを表示する %>
         <%= render partial: "form", locals: { animal: @animal } %>
     </div>
   </div>
 </div>
+</div>
+</main>

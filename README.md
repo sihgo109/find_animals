@@ -25,7 +25,7 @@
 | Column             | Type         | Options     |
 | ------------------ | ------------ | ----------- |
 | title              | string       | null: false |
-| catch_copy         | text         | null: false |
+| charm_point         | text         | null: false |
 | concept            | text         | null: false |
 | image              | ActiveStrage | null: false |
 | user               | text         | null: false |

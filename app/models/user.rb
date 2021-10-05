@@ -16,17 +16,19 @@ class User < ApplicationRecord
 
     has_many :animals
     has_many :comments
+    has_many :messages, dependent: :destroy
+    has_many :entries, dependent: :destroy
+
+    
+    def self.search(search)
+      if search != ""
+        User.where('nickname LIKE(?)', "%#{search}%")
+      else
+        Animal.all
+      end
+    end
          
 end
 
 
-      # t.string :email,              null: false, default: ""
-      # t.string :encrypted_password, null: false, default: ""
-      # t.string :phone_number,      null: false
-      # t.string :nickname,           null: false
-      # t.string :last_name,          null: false
-      # t.string :first_name,         null: false
-      # t.integer :age,                null: false
-      # t.string :job,                null: false
-      # t.text :profile,              null: false
-      # t.string :prefecture,         null:false   
+     

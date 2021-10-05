@@ -1,21 +1,41 @@
 <%= form_with model: animal, local: true do |f|%>
   <div class="field">
-    <%= f.label :title, "プロトタイプの名称" %><br />
-    <%= f.text_field :title, id:"animal_title" %>
+    <%= f.label :name, "お名前" %><br />
+    <%= f.text_field :name, id:"animal_name" %>
   </div>
 
   <div class="field">
-    <%= f.label :catch_copy, "キャッチコピー" %><br />
-    <%= f.text_area :catch_copy, class: :form__text, id:"animal_catch_copy" %>
+    <%= f.label :genre, "動物の種類" %><br />
+    <%= f.text_field :genre,  id:"animal_genre" %>
   </div>
 
   <div class="field">
-    <%= f.label :concept, "コンセプト" %><br />
-    <%= f.text_area :concept, class: :form__text, id:"animal_concept" %>
+    <%= f.label :gender, "性別" %><br />
+    <%= f.text_field :gender,  id:"animal_gender" %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "プロトタイプの画像" %><br />
+    <%= f.label :birthday, "お誕生日" %><br />
+    <%= f.text_field :birthday,  id:"animal_birthday" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age, "年齢" %><br />
+    <%= f.text_field :age, id:"animal_age" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture, "お住まい" %><br />
+    <%= f.text_field :prefecture, class: :form__text, id:"animal_prefecture" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :charm_point, "チャームポイント" %><br />
+    <%= f.text_area :charm_point, class: :form__text, id:"animal_charm_point" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "動物の画像" %><br />
     <%= f.file_field :image, id:"animal_image" %>
   </div>
 
@@ -23,3 +43,4 @@
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
 <% end %>
+

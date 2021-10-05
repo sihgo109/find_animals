@@ -1,10 +1,34 @@
+
+
 <main class="main">
+<div class="wrapper">
+  <div class="side-bar">
+  <div class="side-contents">
+    <div class="side-content">
+      <% if user_signed_in? %>
+      <%= link_to "マイページ", "/users/#{current_user.id}", class: :new_animal %>
+      <% else %>
+
+      <%= link_to "マイページ", "/users/index", class: :new_animal %>
+      <% end %>
+    </div>
+    <div class="side-content">
+      <%= link_to "記事を投稿する", new_animal_path, class: :new_animal %>
+    </div>
+    <div class="side-content">
+      <%= link_to "ユーザ一覧", users_path, class: :new_animal %>
+    </div>
+  </div>
+</div>
+  <div class="body">
   <div class="inner">
     <div class="animal__wrapper">
+    <%= link_to '<<TOPへ戻る', root_path,  class: :top_btn %>
+    
       <p class="animal__hedding">
-        <%= @animal.title %>
+        <%= @animal.name %>
       </p>
-      <%= link_to "by #{@animal.user.username}", user_path(@animal.user), class: :animal__user %>
+      <%= link_to "by #{@animal.user.nickname}", user_path(@animal.user), class: :animal__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @animal.user_id %>
         <div class="animal__manage">
@@ -13,28 +37,48 @@
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="animal__image">
-        <%= image_tag @animal.image %>
+      <div class="animal_show">
+      <div class="detail_left">
+        <div class="animal__image">
+          <%= image_tag @animal.image %>
+        </div>
       </div>
+      <div class="detail_right">
       <div class="animal__body">
         <div class="animal__detail">
-          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__title">種類</p>
           <p class="detail__message">
-            <%= @animal.catch_copy %>
+            <%= @animal.genre %>
           </p>
-        </div>
-        <div class="animal__detail">
-          <p class="detail__title">コンセプト</p>
+          <p class="detail__title">性別</p>
           <p class="detail__message">
-            <%= @animal.concept %>
+            <%= @animal.gender %>
+          </p>
+          <p class="detail__title">お誕生日</p>
+          <p class="detail__message">
+            <%= @animal.birthday %>
+          </p>
+          <p class="detail__title">年齢</p>
+          <p class="detail__message">
+            <%= @animal.age %>
+          </p>
+          <p class="detail__title">お住まい</p>
+          <p class="detail__message">
+            <%= @animal.prefecture %>
+          </p>
+          <p class="detail__title">チャームポイント</p>
+          <p class="detail__message">
+            <%= @animal.charm_point %>
           </p>
         </div>
       </div>
+    </div>
+   </div>
+      
+      <%# コメント機能 %>
       <div class="animal__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
           <%= form_with(model: [@animal, @comment],local: true) do |f|%>
-          <%# form_with model: [@animal, @comment],local: true do |f| %>
             <div class="field">
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text, id:"comment_text" %>
@@ -44,17 +88,13 @@
             </div>
           <% end %>
         <% end %>
-        <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-          <%# <li class="comments_list"> %>
           <% @comments.each do |comment| %>
-            <li class="comments_list">
-              <%= comment.text %>
-              <%= link_to "(#{comment.user.username})", user_path(comment.user), class: :comment_user %>
-              <%# link_to "(#{animal.user.username})", user_path(animal.user), class: :card__user %>
-              <%# link_to "(#{comment.user.username})", user_path(@animal.user), class: :comment_user %>
-            </li>
+             <li class="comments_list"> 
+               <%= comment.text %>
+               <%= link_to "(#{comment.user.nickname})", user_path(comment.user), class: :comment_user %> 
+             </li> 
           <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>

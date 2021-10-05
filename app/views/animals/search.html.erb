@@ -1,0 +1,27 @@
+ <div class="animal__wrapper">
+       
+
+<main class="main">
+  <div class="wrapper">
+      <%= render partial: "side_bar" %>
+      <div class="search-results">
+      <div class="search-header">
+       <%= link_to '<<TOPへ戻る', root_path,  class: :top_btn %>
+      <%= form_with(url: search_animals_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "キーワードで検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+      </div>
+
+        <div class="search-result">
+          <%= "検索結果:" %>
+
+          <div class="contents-row">
+           <% @animals.each do |animal| %>
+             <%= render partial: "animal", locals: { animal: animal } %>
+           <% end %>
+         </div>
+       </div>
+      
+  </div>
+</main>

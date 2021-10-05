@@ -1,0 +1,24 @@
+<div class="side-bar">
+  <div class="side-contents">
+    <div class="side-content">
+      
+      <% if user_signed_in? %>
+      <%= link_to "マイページ", "/users/#{current_user.id}", class: :new_animal %>
+      <% else %>
+
+      <%= link_to "マイページ", "/users/index", class: :new_animal %>
+      <% end %>
+    </div>
+    <div class="side-content">
+      <%= link_to "記事を投稿する", new_animal_path, class: :new_animal %>
+    </div>
+    <div class="side-content">
+      <%= link_to "ユーザ一覧", users_path, class: :new_animal %>
+    </div>
+
+    <div class="side-content">
+      <%= link_to "イベント一覧", calendars_path, class: :new_animal %>
+    </div>
+  </div>
+</div>
+ 
