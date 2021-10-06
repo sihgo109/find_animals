@@ -46,7 +46,17 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :email, :phone_number, :last_name, :first_name, :age, :job, :prefecturre, :profile)
+  end
 end
+
+
+
+
 
 
 
