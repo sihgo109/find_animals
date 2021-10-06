@@ -47,12 +47,14 @@ a {
   width: 1024px;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   width: 200px;
 }
@@ -60,7 +62,6 @@ a {
 .nav_title {
   font-size: 45px;
   color: white;
-  /* padding-left: 0px; */
 }
 
 .nav__right {
@@ -182,6 +183,7 @@ a {
 .card__img {
   margin-bottom: 16px;
 }
+
 .card__title {
   display: block;
   font-size: 20px;
@@ -193,6 +195,7 @@ a {
   font-size: 16px;
   text-align: center;
 }
+
 .card__user {
   display: block;
   font-size: 12px;
@@ -204,9 +207,7 @@ a {
 .wrapper {
   display: flex;
 }
-.side-bar {
-  
-}
+
 .body {
   background-color: #FFFFFF;
   width: calc(100vw - 300px);
@@ -243,8 +244,6 @@ a {
 
 .animal__wrapper{
   min-height: calc(100vh - 161px);
-
-  
 }
 .animal__hedding{
   font-size: 24px;
@@ -325,9 +324,7 @@ a {
   
 }
 
-.detail_left {
-  
-}
+
 
 .detail_right {
  padding-top: 80px;
@@ -354,7 +351,6 @@ a {
   border: 1px solid #f5f5f5;
   width: 30%;
   padding: 8px;
-  color: ;
 }
 .table__col2{
   text-align: left;
