@@ -1,0 +1,72 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>アカウントの編集</h2>
+      <h5></h5>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+      <%= link_to "戻る", :back, class: 'btn'%>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%= form_with model: current_user, local: true do |f|%>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :nickname, "ニックネーム" %><br />
+          <%= f.text_field :nickname, id:"user_nickname" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :phone_number, "電話番号" %><br />
+          <%= f.text_field :phone_number, id:"user_phone_number" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :last_name, "苗字" %><br />
+          <%= f.text_field :last_name, id:"user_last_name" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :first_name, "名前" %><br />
+          <%= f.text_field :first_name, id:"user_first_name" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :age, "年齢" %><br />
+          <%= f.text_field :age, id:"user_age" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :job, "職業" %><br />
+          <%= f.text_field :job, id:"user_job" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :prefecture, "お住まい" %><br />
+          <%= f.text_field :prefecture, id:"user_prefecture" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :profile, "プロフィール" %><br />
+          <%= f.text_area :profile, class: :form__text, id:"user_profile" %>
+        </div>
+        </div>
+        <div class='actions'>
+          <%= f.submit "更新する", class: 'btn'%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

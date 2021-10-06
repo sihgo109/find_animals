@@ -386,6 +386,12 @@ a {
   padding-left: 10px;
 }
 
+.user-edit-btn { 
+  font-size: 20px;
+  color: gray;
+  justify-content: right;
+}
+
 /*イベントスケジュール*/
 
 
