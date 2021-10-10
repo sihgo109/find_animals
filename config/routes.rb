@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users
-  resources :messages, :only => [:create]
-  resources :rooms, :only => [:create, :show, :index]
+  resources :messages
+  resources :rooms
   resources :calendars
 end
